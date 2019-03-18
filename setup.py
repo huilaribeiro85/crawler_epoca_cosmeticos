@@ -12,5 +12,5 @@ setup(
     version='1.0.0',
     author='Huila Ribeiro',
     packages=find_packages(exclude=['tests']),
-    install_requires=['requirements']
+    install_requires=['requests']
 )
