@@ -31,13 +31,6 @@ class TestCrawlerEpocaCosmeticos(unittest.TestCase):
         os.remove("product_infos.csv")
         self.assertTrue(ret)
 
-    def test_read_csv(self):
-        cec = CrawlerEpocaCosmeticos()
-        cec.create_csv(["test1", "test2", "test3"])
-        ret = cec.read_csv()
-        os.remove("product_infos.csv")
-        self.assertEqual(len(ret), 3)
-
 
 if __name__ == '__main__':
     unittest.main()
