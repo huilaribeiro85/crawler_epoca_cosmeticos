@@ -8,9 +8,9 @@ import requests
 
 
 class CrawlerEpocaCosmeticos:
-    def __init__(self):
+    def __init__(self, log_path):
         self.site = "https://www.epocacosmeticos.com.br"
-        self.log_path = os.path.join(os.getcwd(), 'product_infos.csv')
+        self.log_path = os.path.join(log_path, 'product_infos.csv')
         self.unique_product_list = list()
 
     def get_site_content(self, site):
@@ -54,14 +54,6 @@ class CrawlerEpocaCosmeticos:
             print(err)
             return False
 
-    def read_csv(self):
-        open_csv = open(self.log_path, newline='')
-        log_content = csv.reader(open_csv, delimiter="|")
-        for row in log_content:
-            print(row)
-        open_csv.close()
-        return row
-
     def run(self):
         if os.path.exists(self.log_path):
             os.remove(self.log_path)
@@ -88,9 +80,8 @@ class CrawlerEpocaCosmeticos:
                             else:
                                 print(product_url)
                 page_number += 1
-        self.read_csv()
 
 
 if __name__ == "__main__":
-    cec = CrawlerEpocaCosmeticos()
+    cec = CrawlerEpocaCosmeticos(os.getcwd())
     cec.run()
