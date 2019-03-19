@@ -8,5 +8,5 @@ pip install git+https://github.com/huilaribeiro85/crawler_epoca_cosmeticos.git
 
 from crawler_epoca_cosmeticos.crawler.crawler_epoca_cosmeticos import CrawlerEpocaCosmeticos
 
-cec = CrawlerEpocaCosmeticos()
-cec.run()
+CrawlerEpocaCosmeticos().run()
+
