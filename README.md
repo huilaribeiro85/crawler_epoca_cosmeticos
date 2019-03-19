@@ -6,6 +6,7 @@
 - create a py with this content to run:
 
 import os
+
 from crawler_epoca_cosmeticos.crawler.crawler_epoca_cosmeticos import CrawlerEpocaCosmeticos
 
 CrawlerEpocaCosmeticos(os.getcwd()).run()
